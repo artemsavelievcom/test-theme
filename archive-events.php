@@ -17,7 +17,6 @@ if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
 
 <article id="post-<?php the_ID(); ?>">
-	<?php if (function_exists('event_status')) { event_status($post->ID); }; ?>
 	<div class="article_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
 	<div class="article_meta">
 		<?php if (get_field('date_start')) { ?><div class="meta_date"><?php _e('Start Date:','test-theme'); ?> <?php the_field('date_start'); ?></div><?php }; ?>

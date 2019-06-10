@@ -471,28 +471,3 @@ function google_calendar_link($the_post_id) {
 		</div>
 	<?php };
 }
-
-function event_status($the_post_id) {
-	if (get_field('date_start',$the_post_id) && get_field('date_end',$the_post_id)) {
-		$date_now = date("Ymdhis"); 
-		$format_in = 'F j, Y g:i a';
-		$format_out = 'Ymdhis';
-		$date_start = DateTime::createFromFormat($format_in, get_field('date_start',$the_post_id));
-		$date_end = DateTime::createFromFormat($format_in, get_field('date_end',$the_post_id));
-		if ($date_now < $date_end->format( $format_out ) && $date_now > $date_start->format( $format_out )) {
-			$event_status = __('Is passing now','test-theme');
-			$event_status_class = 'now';
-		} elseif ($date_now > $date_end->format( $format_out ) && $date_now > $date_start->format( $format_out )) {
-			$event_status = __('Passed','test-theme');
-			$event_status_class = 'passed';
-		} elseif ($date_now < $date_end->format( $format_out ) && $date_now < $date_start->format( $format_out )) {
-			$event_status = __('Upcoming','test-theme');
-			$event_status_class = 'upcoming';
-		} else {
-			$event_status = false;
-		}
-		if ($event_status !=false) {
-			echo '<div class="event_status '.$event_status_class.'">'.$event_status.'</div>';
-		}
-	}
-}

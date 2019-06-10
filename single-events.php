@@ -4,7 +4,6 @@
 <?php while (have_posts()) : the_post(); ?>
 <h1><?php the_title(); ?></h1>
 <article id="post-<?php the_ID(); ?>">
-	<?php if (function_exists('event_status')) { event_status($post->ID); }; ?>
 	<div class="article_meta">
 		<?php if (get_field('date_start')) { ?><div class="meta_date"><?php _e('Start Date:','test-theme'); ?> <?php the_field('date_start'); ?></div><?php }; ?>
 		<?php if (get_field('date_end')) { ?><div class="meta_date"><?php _e('End Date:','test-theme'); ?> <?php the_field('date_end'); ?></div><?php }; ?>

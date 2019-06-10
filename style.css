@@ -79,24 +79,3 @@ a.article_button, a.article_button:link, a.article_button:visited, a.article_but
 a.article_button:hover {
 	color: #999
 }
-
-.event_status {
-	font-size: 0.8em;
-	background-color: #EEE;
-	padding: 2px 6px;
-	color: #999;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	display: inline-block;
-	margin-bottom: 5px;
-}
-
-.event_status.upcoming {
-	background-color: #F3DD9C;
-	color: #B9952E;
-}
-.event_status.now {
-	background-color: #D2E9C6;
-	color: #769F60;
-}
